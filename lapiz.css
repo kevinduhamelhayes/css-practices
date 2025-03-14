@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f0f0f0;
+    position: relative;
+}
+
+.pencil {
+    position: relative;
+    width: 300px;
+    height: 40px;
+    transform: rotate(-45deg);
+    animation: write 3s linear infinite;
+}
+
+.pencil-body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #ffd700;
+    border-radius: 5px;
+}
+
+.pencil-top {
+    position: absolute;
+    left: -20px;
+    width: 60px;
+    height: 100%;
+}
+
+.lead {
+    position: absolute;
+    left: 0;
+    width: 20px;
+    height: 100%;
+    background: #333;
+    clip-path: polygon(0 50%, 100% 0, 100% 100%);
+}
+
+.eraser {
+    position: absolute;
+    right: 0;
+    width: 20px;
+    height: 100%;
+    background: #ff6b6b;
+    border-radius: 0 5px 5px 0;
+}
+
+.metal {
+    position: absolute;
+    right: 20px;
+    width: 10px;
+    height: 100%;
+    background: #a0a0a0;
+}
+
+.lines {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.line {
+    width: 2px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.writing-line {
+    position: absolute;
+    width: 200px;
+    height: 2px;
+    background: #333;
+    transform: rotate(45deg);
+    overflow: hidden;
+}
+
+.writing-line::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #f0f0f0;
+    animation: write-line 3s linear infinite;
+}
+
+@keyframes write {
+    0%, 90%, 100% {
+        transform: rotate(-45deg) translate(0, 0);
+    }
+    45% {
+        transform: rotate(-45deg) translate(100px, 100px);
+    }
+}
+
+@keyframes write-line {
+    0% {
+        transform: translateX(-100%);
+    }
+    45%, 55% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+} 
