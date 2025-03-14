@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f0f0f0;
+}
+
+.tv {
+    position: relative;
+    width: 400px;
+    height: 350px;
+}
+
+.tv-body {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    background: #8B4513;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    padding: 20px;
+}
+
+.antenna {
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    top: -80px;
+    display: flex;
+    justify-content: center;
+}
+
+.antenna-left, .antenna-right {
+    width: 5px;
+    height: 80px;
+    background: #333;
+    position: relative;
+}
+
+.antenna-left {
+    transform: rotate(-15deg);
+    margin-right: 40px;
+}
+
+.antenna-right {
+    transform: rotate(15deg);
+    margin-left: 40px;
+}
+
+.screen {
+    width: 80%;
+    height: 160px;
+    background: #000;
+    margin: 0 auto;
+    border-radius: 50% / 10%;
+    position: relative;
+    overflow: hidden;
+}
+
+.static {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="black"/><g fill="white"><rect x="10" y="10" width="1" height="1"/><rect x="30" y="10" width="1" height="1"/><rect x="50" y="10" width="1" height="1"/><rect x="70" y="10" width="1" height="1"/><rect x="90" y="10" width="1" height="1"/><rect x="20" y="20" width="1" height="1"/><rect x="40" y="20" width="1" height="1"/><rect x="60" y="20" width="1" height="1"/><rect x="80" y="20" width="1" height="1"/><rect x="10" y="30" width="1" height="1"/><rect x="30" y="30" width="1" height="1"/><rect x="50" y="30" width="1" height="1"/><rect x="70" y="30" width="1" height="1"/><rect x="90" y="30" width="1" height="1"/><rect x="20" y="40" width="1" height="1"/><rect x="40" y="40" width="1" height="1"/><rect x="60" y="40" width="1" height="1"/><rect x="80" y="40" width="1" height="1"/><rect x="10" y="50" width="1" height="1"/><rect x="30" y="50" width="1" height="1"/><rect x="50" y="50" width="1" height="1"/><rect x="70" y="50" width="1" height="1"/><rect x="90" y="50" width="1" height="1"/><rect x="20" y="60" width="1" height="1"/><rect x="40" y="60" width="1" height="1"/><rect x="60" y="60" width="1" height="1"/><rect x="80" y="60" width="1" height="1"/><rect x="10" y="70" width="1" height="1"/><rect x="30" y="70" width="1" height="1"/><rect x="50" y="70" width="1" height="1"/><rect x="70" y="70" width="1" height="1"/><rect x="90" y="70" width="1" height="1"/><rect x="20" y="80" width="1" height="1"/><rect x="40" y="80" width="1" height="1"/><rect x="60" y="80" width="1" height="1"/><rect x="80" y="80" width="1" height="1"/><rect x="10" y="90" width="1" height="1"/><rect x="30" y="90" width="1" height="1"/><rect x="50" y="90" width="1" height="1"/><rect x="70" y="90" width="1" height="1"/><rect x="90" y="90" width="1" height="1"/></g></svg>');
+    animation: static 0.2s steps(4) infinite;
+    opacity: 0.8;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 30px;
+}
+
+.knob {
+    width: 30px;
+    height: 30px;
+    background: #333;
+    border-radius: 50%;
+    border: 3px solid #222;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.knob:hover {
+    transform: rotate(45deg);
+}
+
+.speaker {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    margin-top: 20px;
+    padding: 0 50px;
+}
+
+.speaker-hole {
+    width: 20px;
+    height: 5px;
+    background: #333;
+    border-radius: 2px;
+}
+
+.tv-stand {
+    width: 120px;
+    height: 30px;
+    background: #8B4513;
+    margin: 0 auto;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes static {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 100%; }
+} 

@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #87CEEB, #1E90FF);
+}
+
+.traffic-light {
+    position: relative;
+    width: 120px;
+    height: 320px;
+    background: #333;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 15px 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.light {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #555;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.light::after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    top: 20%;
+    left: 20%;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), transparent);
+}
+
+.red {
+    background: #555;
+    animation: redLight 10s infinite;
+}
+
+.yellow {
+    background: #555;
+    animation: yellowLight 10s infinite;
+}
+
+.green {
+    background: #555;
+    animation: greenLight 10s infinite;
+}
+
+.pole {
+    position: absolute;
+    width: 30px;
+    height: 200px;
+    background: #333;
+    bottom: -200px;
+    border-radius: 0 0 5px 5px;
+}
+
+@keyframes redLight {
+    0%, 45% {
+        background: #ff3333;
+        box-shadow: 0 0 20px #ff3333, 0 0 40px #ff3333;
+    }
+    50%, 100% {
+        background: #555;
+        box-shadow: none;
+    }
+}
+
+@keyframes yellowLight {
+    0%, 40% {
+        background: #555;
+        box-shadow: none;
+    }
+    45%, 55% {
+        background: #ffcc00;
+        box-shadow: 0 0 20px #ffcc00, 0 0 40px #ffcc00;
+    }
+    60%, 100% {
+        background: #555;
+        box-shadow: none;
+    }
+}
+
+@keyframes greenLight {
+    0%, 55% {
+        background: #555;
+        box-shadow: none;
+    }
+    60%, 95% {
+        background: #33cc33;
+        box-shadow: 0 0 20px #33cc33, 0 0 40px #33cc33;
+    }
+    100% {
+        background: #555;
+        box-shadow: none;
+    }
+} 
