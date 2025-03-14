@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #87CEEB, #1E90FF);
+    overflow: hidden;
+}
+
+.hot-air-balloon {
+    position: relative;
+    animation: float 6s ease-in-out infinite;
+}
+
+.balloon {
+    width: 120px;
+    height: 160px;
+    background: #FF6B6B;
+    border-radius: 50% 50% 20% 20%;
+    position: relative;
+    overflow: hidden;
+}
+
+.stripe {
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    background: #FFE66D;
+}
+
+.stripe:nth-child(1) {
+    top: 30px;
+}
+
+.stripe:nth-child(2) {
+    top: 70px;
+}
+
+.stripe:nth-child(3) {
+    top: 110px;
+}
+
+.basket {
+    position: relative;
+    width: 60px;
+    height: 40px;
+    background: #8B4513;
+    margin: 10px auto 0;
+    border-radius: 0 0 10px 10px;
+}
+
+.rope {
+    position: absolute;
+    width: 2px;
+    height: 30px;
+    background: #8B4513;
+    top: -30px;
+}
+
+.rope.left {
+    left: 10px;
+    transform: rotate(-10deg);
+}
+
+.rope.right {
+    right: 10px;
+    transform: rotate(10deg);
+}
+
+.clouds {
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.cloud {
+    position: absolute;
+    width: 100px;
+    height: 40px;
+    background: white;
+    border-radius: 20px;
+    animation: moveCloud 8s linear infinite;
+}
+
+.cloud:before,
+.cloud:after {
+    content: '';
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+}
+
+.cloud:before {
+    width: 50px;
+    height: 50px;
+    top: -20px;
+    left: 15px;
+}
+
+.cloud:after {
+    width: 30px;
+    height: 30px;
+    top: -10px;
+    right: 15px;
+}
+
+.cloud:nth-child(2) {
+    top: -30px;
+    left: 100px;
+    transform: scale(0.8);
+    animation-delay: -2s;
+}
+
+.cloud:nth-child(3) {
+    top: 30px;
+    left: -50px;
+    transform: scale(0.6);
+    animation-delay: -4s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes moveCloud {
+    0% {
+        transform: translateX(150px);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-150px);
+        opacity: 0;
+    }
+} 
