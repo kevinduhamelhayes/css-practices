@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Elementos CSS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 50px 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #333;
+            font-size: 2.5rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .item a {
+            display: block;
+            padding: 20px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-align: center;
+            border-top: 1px solid #eee;
+        }
+        
+        .preview {
+            height: 200px;
+            background: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .preview img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Galería de Elementos CSS</h1>
+        
+        <div class="gallery">
+            <div class="item">
+                <div class="preview">
+                    <iframe src="taza-cafe.html" frameborder="0" width="100%" height="100%"></iframe>
+                </div>
+                <a href="taza-cafe.html" target="_blank">Taza de Café</a>
+            </div>
+            
+            <div class="item">
+                <div class="preview">
+                    <iframe src="lapiz.html" frameborder="0" width="100%" height="100%"></iframe>
+                </div>
+                <a href="lapiz.html" target="_blank">Lápiz</a>
+            </div>
+            
+            <div class="item">
+                <div class="preview">
+                    <iframe src="boton-3d.html" frameborder="0" width="100%" height="100%"></iframe>
+                </div>
+                <a href="boton-3d.html" target="_blank">Botón 3D Interactivo</a>
+            </div>
+            
+            <div class="item">
+                <div class="preview">
+                    <iframe src="globo.html" frameborder="0" width="100%" height="100%"></iframe>
+                </div>
+                <a href="globo.html" target="_blank">Globo Aerostático</a>
+            </div>
+            
+            <div class="item">
+                <div class="preview">
+                    <iframe src="reloj.html" frameborder="0" width="100%" height="100%"></iframe>
+                </div>
+                <a href="reloj.html" target="_blank">Reloj Analógico</a>
+            </div>
+            
+            <div class="item">
+                <div class="preview">
+                    <iframe src="libro.html" frameborder="0" width="100%" height="100%"></iframe>
+                </div>
+                <a href="libro.html" target="_blank">Libro Abierto</a>
+            </div>
+            
+            <div class="item">
+                <div class="preview">
+                    <iframe src="semaforo.html" frameborder="0" width="100%" height="100%"></iframe>
+                </div>
+                <a href="semaforo.html" target="_blank">Semáforo</a>
+            </div>
+            
+            <div class="item">
+                <div class="preview">
+                    <iframe src="camisa.html" frameborder="0" width="100%" height="100%"></iframe>
+                </div>
+                <a href="camisa.html" target="_blank">Camisa</a>
+            </div>
+            
+            <div class="item">
+                <div class="preview">
+                    <iframe src="tv.html" frameborder="0" width="100%" height="100%"></iframe>
+                </div>
+                <a href="tv.html" target="_blank">Televisor Antiguo</a>
+            </div>
+            
+            <div class="item">
+                <div class="preview">
+                    <iframe src="guitarra.html" frameborder="0" width="100%" height="100%"></iframe>
+                </div>
+                <a href="guitarra.html" target="_blank">Guitarra</a>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Galería de elementos CSS creados con HTML y CSS puro</p>
+        </footer>
+    </div>
+</body>
+</html> 
